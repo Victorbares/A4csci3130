@@ -17,6 +17,11 @@ public class Contact implements Serializable {
     public  String uid;
     public  String name;
     public  String email;
+    //public int Busnumber;
+    //public String Primbus;
+    //public String addr;
+    //public String ProTerr;
+
 
     public Contact() {
         // Default constructor required for calls to DataSnapshot.getValue
