@@ -12,41 +12,37 @@ import java.util.Map;
  * Firebase databse. This is converted to a JSON format
  */
 
-public class Contact implements Serializable {
+public class BusinessData implements Serializable {
 
     public  String uid;
     public  String name;
-    public  String email;
     public String bussnumber;
     public String primbus;
     public String addr;
     public String proTerr;
 
 
-    public Contact() {
+    public BusinessData() {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Contact(String uid, String name, String email, String bussnumber,String primbus, String address, String proTerr){
+    public BusinessData(String uid, String name, String bussnumber, String primbus, String address, String proTerr){
         this.uid = uid;
         this.name = name;
-        this.email = email;
         this.bussnumber = bussnumber;
         this.primbus = primbus;
         this.addr = address;
         this.proTerr = proTerr;
     }
-    public Contact(String uid, String name, String email) {
+    public BusinessData(String uid, String name) {
         this.uid = uid;
         this.name = name;
-        this.email = email;
     }
     @Exclude
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
         result.put("uid", uid);
         result.put("name", name);
-        result.put("email", email);
         result.put("bussnumber", bussnumber);
         result.put("primbus", primbus);
         result.put("addr", addr);

@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
 
 
     private ListView contactListView;
-    private FirebaseListAdapter<Contact> firebaseAdapter;
+    private FirebaseListAdapter<BusinessData> firebaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +33,10 @@ public class MainActivity extends Activity {
         contactListView = (ListView) findViewById(R.id.listView);
 
         //Set up the List View
-       firebaseAdapter = new FirebaseListAdapter<Contact>(this, Contact.class,
+       firebaseAdapter = new FirebaseListAdapter<BusinessData>(this, BusinessData.class,
                 android.R.layout.simple_list_item_1, appData.firebaseReference) {
             @Override
-            protected void populateView(View v, Contact model, int position) {
+            protected void populateView(View v, BusinessData model, int position) {
                 TextView contactName = (TextView)v.findViewById(android.R.id.text1);
                 contactName.setText(model.name);
             }
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
             // onItemClick method is called everytime a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Contact person = (Contact) firebaseAdapter.getItem(position);
+                BusinessData person = (BusinessData) firebaseAdapter.getItem(position);
                 showDetailView(person);
             }
         });
@@ -58,10 +58,10 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
-    private void showDetailView(Contact person)
+    private void showDetailView(BusinessData person)
     {
         Intent intent = new Intent(this, DetailViewActivity.class);
-        intent.putExtra("Contact", person);
+        intent.putExtra("BusinessData", person);
         startActivity(intent);
     }
 
