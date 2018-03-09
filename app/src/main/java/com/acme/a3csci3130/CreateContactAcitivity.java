@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class CreateContactAcitivity extends Activity {
 
@@ -23,7 +24,6 @@ public class CreateContactAcitivity extends Activity {
         nameField = (EditText) findViewById(R.id.name);
         emailField = (EditText) findViewById(R.id.email);
         bussnumberField= (EditText) findViewById(R.id.bussnumber);
-        primbusField = (EditText) findViewById(R.id.primbus);
         addrField = (EditText) findViewById(R.id.addr);
         proTerrField = (EditText) findViewById(R.id.proTerr);
     }
@@ -34,7 +34,7 @@ public class CreateContactAcitivity extends Activity {
         String name = nameField.getText().toString();
         String email = emailField.getText().toString();
         String bussnumber = bussnumberField.getText().toString();
-        String primbus = primbusField.getText().toString();
+        String primbus = ((Spinner) findViewById(R.id.primbus)).getSelectedItem().toString();
         String addr = addrField.getText().toString();
         String proTerr = proTerrField.getText().toString();
         Contact person = new Contact(personID, name, email,bussnumber,primbus,addr,proTerr);
