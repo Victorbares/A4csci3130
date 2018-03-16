@@ -27,6 +27,11 @@ public class CreateContactAcitivity extends Activity {
         proTerrField = (EditText) findViewById(R.id.proTerr);
     }
 
+    /**
+     * Method when te sumbit button if clicked
+     * add the new business contact to firebase.
+     * @param v
+     */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String personID = appState.firebaseReference.push().getKey();

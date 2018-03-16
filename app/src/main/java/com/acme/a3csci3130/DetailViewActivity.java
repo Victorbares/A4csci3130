@@ -39,6 +39,10 @@ public class DetailViewActivity extends Activity {
         }
     }
 
+    /**
+     * Update business contact on firebase base on the field of the view.
+     * @param v
+     */
     public void updateContact(View v){
         String personID = receivedPersonInfo.uid;
         String name = nameField.getText().toString();
@@ -51,15 +55,12 @@ public class DetailViewActivity extends Activity {
         finish();
     }
 
+    /**
+     * Delete the business contact on firebase.
+     * @param v
+     */
     public void eraseContact(View v)
     {
-        /*String personID = appState.firebaseReference.getKey(receivedPersonInfo.name);
-
-        String name = nameField.getText().toString();
-        String email = emailField.getText().toString();
-        BusinessData person = new BusinessData(personID, name, email);
-
-        appState.firebaseReference.child(personID).setValue(person);*/
         appState.firebaseReference.child(receivedPersonInfo.uid).removeValue();
         finish();
     }

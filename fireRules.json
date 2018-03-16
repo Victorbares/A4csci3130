@@ -9,7 +9,7 @@
         },
 
         "bussnumber": {
-          ".validate": "newData.isString() && newData.val().matches(/^\\d{1,9}$/)"
+          ".validate": "newData.isString() && newData.val().matches(/^\\d{9}$/)"
         },
 
         "primbus": {

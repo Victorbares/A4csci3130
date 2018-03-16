@@ -26,6 +26,15 @@ public class BusinessData implements Serializable {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
+    /**
+     * Construction of the BusinessData
+     * @param uid id on firebase
+     * @param name name of the business contact
+     * @param bussnumber Number of the business contact
+     * @param primbus primary business of the business contact
+     * @param address address of the business contact
+     * @param proTerr province or territory of the business contact.
+     */
     public BusinessData(String uid, String name, String bussnumber, String primbus, String address, String proTerr){
         this.uid = uid;
         this.name = name;
@@ -34,10 +43,7 @@ public class BusinessData implements Serializable {
         this.addr = address;
         this.proTerr = proTerr;
     }
-    public BusinessData(String uid, String name) {
-        this.uid = uid;
-        this.name = name;
-    }
+
     @Exclude
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
